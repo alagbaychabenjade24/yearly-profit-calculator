@@ -28,7 +28,7 @@ main {
 	form {
 		width: 95%;
 		max-width: 1440px;
-		margin: 0 auto 50px;
+		margin: 0 auto;
 
 		input {
 			border: 1px solid black;
@@ -78,6 +78,18 @@ main {
 			line-height: 40px;
 			padding: 0 20px;
 			cursor: pointer;
+		}
+	}
+
+	aside {
+		width: 95%;
+		max-width: 1440px;
+		margin: 30px auto;
+
+		p {
+			font-size: 15px;
+			font-weight: 600;
+			margin: 10px 0;
 		}
 	}
 

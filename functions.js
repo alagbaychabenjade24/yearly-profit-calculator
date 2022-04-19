@@ -62,161 +62,176 @@ const decTotalCapital = document.querySelector(
 	'.month:nth-of-type(12) .total__capital'
 );
 
-form.addEventListener('submit', event => {
-	event.preventDefault();
+const startingCapital = document.querySelector('.starting__capital');
+const monthlyPercentageGoal = document.querySelector(
+	'.monthly__percentage__goal'
+);
 
-	const percentages = percentage.value / 100;
+const calculateCapital = () => {
+	form.addEventListener('submit', event => {
+		event.preventDefault();
 
-	const parseCapital = parseInt(capital.value);
-	const parsePercentage = parseInt((parseCapital * percentage.value) / 100);
+		const percentages = percentage.value / 100;
 
-	const res = parseCapital + parsePercentage;
+		const parseCapital = parseInt(capital.value);
+		const parsePercentage = parseInt((parseCapital * percentage.value) / 100);
 
-	const gains = res - parseCapital;
+		const res = parseCapital + parsePercentage;
 
-	const a = (janGains.textContent += ` + ₱ ${gains.toLocaleString()}`);
-	const b = (janTotalCapital.textContent += ` = ₱ ${res.toLocaleString()}`);
+		const gains = res - parseCapital;
 
-	const c = b.replace(/[^0-9.]/g, '');
-	const d = parseFloat(c);
+		const a = (janGains.textContent += ` + ₱ ${gains.toLocaleString()}`);
+		const b = (janTotalCapital.textContent += ` = ₱ ${res.toLocaleString()}`);
 
-	const cc = (febGains.textContent += ` + ₱ ${(
-		d * percentages +
-		res -
-		d
-	).toLocaleString()}`);
-	const dd = (febTotalCapital.textContent += ` = ₱ ${(
-		d * percentages +
-		res
-	).toLocaleString()}`);
+		const c = b.replace(/[^0-9.]/g, '');
+		const d = parseFloat(c);
 
-	const e = dd.replace(/[^0-9.]/g, '');
-	const f = parseFloat(e);
+		startingCapital.textContent +=
+			' - ₱ ' + (capital.value / 1).toLocaleString();
+		monthlyPercentageGoal.textContent += ' - ' + percentage.value + '%';
 
-	const ee = (marGains.textContent += ` + ₱ ${(
-		f * percentages +
-		f -
-		f
-	).toLocaleString()}`);
-	const ff = (marTotalCapital.textContent += ` = ₱ ${(
-		f * percentages +
-		f
-	).toLocaleString()}`);
+		const cc = (febGains.textContent += ` + ₱ ${(
+			d * percentages +
+			res -
+			d
+		).toLocaleString()}`);
+		const dd = (febTotalCapital.textContent += ` = ₱ ${(
+			d * percentages +
+			res
+		).toLocaleString()}`);
 
-	const g = ff.replace(/[^0-9.]/g, '');
-	const h = parseFloat(g);
+		const e = dd.replace(/[^0-9.]/g, '');
+		const f = parseFloat(e);
 
-	const gg = (aprGains.textContent += ` + ₱ ${(
-		h * percentages +
-		h -
-		h
-	).toLocaleString()}`);
-	const hh = (aprTotalCapital.textContent += ` = ₱ ${(
-		h * percentages +
-		h
-	).toLocaleString()}`);
+		const ee = (marGains.textContent += ` + ₱ ${(
+			f * percentages +
+			f -
+			f
+		).toLocaleString()}`);
+		const ff = (marTotalCapital.textContent += ` = ₱ ${(
+			f * percentages +
+			f
+		).toLocaleString()}`);
 
-	const i = hh.replace(/[^0-9.]/g, '');
-	const j = parseFloat(i);
+		const g = ff.replace(/[^0-9.]/g, '');
+		const h = parseFloat(g);
 
-	const ii = (mayGains.textContent += ` + ₱ ${(
-		j * percentages +
-		j -
-		j
-	).toLocaleString()}`);
-	const jj = (mayTotalCapital.textContent += ` = ₱ ${(
-		j * percentages +
-		j
-	).toLocaleString()}`);
+		const gg = (aprGains.textContent += ` + ₱ ${(
+			h * percentages +
+			h -
+			h
+		).toLocaleString()}`);
+		const hh = (aprTotalCapital.textContent += ` = ₱ ${(
+			h * percentages +
+			h
+		).toLocaleString()}`);
 
-	const k = jj.replace(/[^0-9.]/g, '');
-	const l = parseFloat(k);
+		const i = hh.replace(/[^0-9.]/g, '');
+		const j = parseFloat(i);
 
-	const kk = (junGains.textContent += ` + ₱ ${(
-		l * percentages +
-		l -
-		l
-	).toLocaleString()}`);
-	const ll = (junTotalCapital.textContent += ` = ₱ ${(
-		l * percentages +
-		l
-	).toLocaleString()}`);
+		const ii = (mayGains.textContent += ` + ₱ ${(
+			j * percentages +
+			j -
+			j
+		).toLocaleString()}`);
+		const jj = (mayTotalCapital.textContent += ` = ₱ ${(
+			j * percentages +
+			j
+		).toLocaleString()}`);
 
-	const m = ll.replace(/[^0-9.]/g, '');
-	const n = parseFloat(m);
+		const k = jj.replace(/[^0-9.]/g, '');
+		const l = parseFloat(k);
 
-	const mm = (julGains.textContent += ` + ₱ ${(
-		n * percentages +
-		n -
-		n
-	).toLocaleString()}`);
-	const nn = (julTotalCapital.textContent += ` = ₱ ${(
-		n * percentages +
-		n
-	).toLocaleString()}`);
+		const kk = (junGains.textContent += ` + ₱ ${(
+			l * percentages +
+			l -
+			l
+		).toLocaleString()}`);
+		const ll = (junTotalCapital.textContent += ` = ₱ ${(
+			l * percentages +
+			l
+		).toLocaleString()}`);
 
-	const o = nn.replace(/[^0-9.]/g, '');
-	const p = parseFloat(o);
+		const m = ll.replace(/[^0-9.]/g, '');
+		const n = parseFloat(m);
 
-	const oo = (augGains.textContent += ` + ₱ ${(
-		p * percentages +
-		p -
-		p
-	).toLocaleString()}`);
-	const pp = (augTotalCapital.textContent += ` = ₱ ${(
-		p * percentages +
-		p
-	).toLocaleString()}`);
+		const mm = (julGains.textContent += ` + ₱ ${(
+			n * percentages +
+			n -
+			n
+		).toLocaleString()}`);
+		const nn = (julTotalCapital.textContent += ` = ₱ ${(
+			n * percentages +
+			n
+		).toLocaleString()}`);
 
-	const q = pp.replace(/[^0-9.]/g, '');
-	const r = parseFloat(q);
+		const o = nn.replace(/[^0-9.]/g, '');
+		const p = parseFloat(o);
 
-	const qq = (sepGains.textContent += ` + ₱ ${(
-		r * percentages +
-		r -
-		r
-	).toLocaleString()}`);
-	const rr = (sepTotalCapital.textContent += ` = ₱ ${(
-		r * percentages +
-		r
-	).toLocaleString()}`);
+		const oo = (augGains.textContent += ` + ₱ ${(
+			p * percentages +
+			p -
+			p
+		).toLocaleString()}`);
+		const pp = (augTotalCapital.textContent += ` = ₱ ${(
+			p * percentages +
+			p
+		).toLocaleString()}`);
 
-	const s = rr.replace(/[^0-9.]/g, '');
-	const t = parseFloat(s);
+		const q = pp.replace(/[^0-9.]/g, '');
+		const r = parseFloat(q);
 
-	const ss = (octGains.textContent += ` + ₱ ${(
-		t * percentages +
-		t -
-		t
-	).toLocaleString()}`);
-	const tt = (octTotalCapital.textContent += ` = ₱ ${(
-		t * percentages +
-		t
-	).toLocaleString()}`);
+		const qq = (sepGains.textContent += ` + ₱ ${(
+			r * percentages +
+			r -
+			r
+		).toLocaleString()}`);
+		const rr = (sepTotalCapital.textContent += ` = ₱ ${(
+			r * percentages +
+			r
+		).toLocaleString()}`);
 
-	const u = tt.replace(/[^0-9.]/g, '');
-	const v = parseFloat(u);
+		const s = rr.replace(/[^0-9.]/g, '');
+		const t = parseFloat(s);
 
-	const uu = (novGains.textContent += ` + ₱ ${(
-		v * percentages +
-		v -
-		v
-	).toLocaleString()}`);
-	const vv = (novTotalCapital.textContent += ` = ₱ ${(
-		v * percentages +
-		v
-	).toLocaleString()}`);
+		const ss = (octGains.textContent += ` + ₱ ${(
+			t * percentages +
+			t -
+			t
+		).toLocaleString()}`);
+		const tt = (octTotalCapital.textContent += ` = ₱ ${(
+			t * percentages +
+			t
+		).toLocaleString()}`);
 
-	const w = vv.replace(/[^0-9.]/g, '');
-	const x = parseFloat(w);
+		const u = tt.replace(/[^0-9.]/g, '');
+		const v = parseFloat(u);
 
-	const ww = (decGains.textContent += ` + ₱ ${(
-		x * percentages +
-		x -
-		x
-	).toLocaleString()}`);
-	const xx = (decTotalCapital.textContent += ` = ₱ ${(
-		x * percentages +
-		x
-	).toLocaleString()}`);
-});
+		const uu = (novGains.textContent += ` + ₱ ${(
+			v * percentages +
+			v -
+			v
+		).toLocaleString()}`);
+		const vv = (novTotalCapital.textContent += ` = ₱ ${(
+			v * percentages +
+			v
+		).toLocaleString()}`);
+
+		const w = vv.replace(/[^0-9.]/g, '');
+		const x = parseFloat(w);
+
+		const ww = (decGains.textContent += ` + ₱ ${(
+			x * percentages +
+			x -
+			x
+		).toLocaleString()}`);
+		const xx = (decTotalCapital.textContent += ` = ₱ ${(
+			x * percentages +
+			x
+		).toLocaleString()}`);
+
+		event.target.reset();
+	});
+};
+
+calculateCapital();

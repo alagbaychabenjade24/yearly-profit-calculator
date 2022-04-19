@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+	font-family: 'Montserrat', sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+
+header {
+	background-color: #1da1f2;
+	padding: 20px 0;
+
+	h1 {
+		font-size: 20px;
+		font-weight: 500;
+		color: white;
+		width: 95%;
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+}
+
+main {
+	margin: 30px 0;
+
+	form {
+		width: 95%;
+		max-width: 1440px;
+		margin: 0 auto 50px;
+
+		input {
+			border: 1px solid black;
+			line-height: 40px;
+			padding: 0 20px;
+
+			@media (min-width: 0) {
+				width: 100%;
+
+				&:nth-of-type(2) {
+					margin: 10px 0;
+				}
+			}
+
+			@media (min-width: 370px) {
+				width: 250px;
+			}
+
+			@media (min-width: 530px) {
+				&:nth-of-type(1) {
+					margin-right: 5px;
+					margin-bottom: 10px;
+				}
+
+				&:nth-of-type(2) {
+					margin: 0;
+				}
+			}
+
+			@media (min-width: 638px) {
+				&:nth-of-type(1) {
+					margin-right: 5px;
+					margin-bottom: 0;
+				}
+
+				&:nth-of-type(2) {
+					margin: 0 5px 0 0;
+				}
+			}
+		}
+
+		button {
+			font-weight: 600;
+			color: white;
+			background-color: #1da1f2;
+			border: 1px solid #1da1f2;
+			line-height: 40px;
+			padding: 0 20px;
+			cursor: pointer;
+		}
+	}
+
+	.months {
+		display: grid;
+
+		grid-gap: 30px;
+		width: 95%;
+		max-width: 1440px;
+		margin: 0 auto;
+
+		@media (min-width: 0) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		@media (min-width: 400px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (min-width: 638px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (min-width: 900px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.month {
+			h2 {
+				font-size: 14px;
+				font-weight: 500;
+				color: #70757a;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 15px;
+				font-weight: 500;
+			}
+
+			.gains {
+				color: #85bb65;
+				margin: 5px 0;
+			}
+		}
+	}
+}

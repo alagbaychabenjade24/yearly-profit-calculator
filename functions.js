@@ -101,7 +101,7 @@ const calculateCapital = () => {
 		dailyPercentageGoal.textContent += ' - ' + percentage.value / 20 + '%';
 
 		averageNumberTrades.textContent +=
-			' - ' + percentage.value / 20 / 0.5 + 'Trades';
+			' - ' + percentage.value / 20 / 0.5 + ' Trades';
 
 		const cc = (febGains.textContent += ` + ₱ ${(
 			d * percentages +

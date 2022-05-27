@@ -66,6 +66,11 @@ const startingCapital = document.querySelector('.starting__capital');
 const monthlyPercentageGoal = document.querySelector(
 	'.monthly__percentage__goal'
 );
+const weeklyPercentageGoal = document.querySelector(
+	'.weekly__percentage__goal'
+);
+const dailyPercentageGoal = document.querySelector('.daily__percentage__goal');
+const averageNumberTrades = document.querySelector('.avg__numb__trade');
 
 const calculateCapital = () => {
 	form.addEventListener('submit', event => {
@@ -88,7 +93,15 @@ const calculateCapital = () => {
 
 		startingCapital.textContent +=
 			' - ₱ ' + (capital.value / 1).toLocaleString();
+
 		monthlyPercentageGoal.textContent += ' - ' + percentage.value + '%';
+
+		weeklyPercentageGoal.textContent += ' - ' + percentage.value / 4 + '%';
+
+		dailyPercentageGoal.textContent += ' - ' + percentage.value / 20 + '%';
+
+		averageNumberTrades.textContent +=
+			' - ' + percentage.value / 20 / 0.5 + 'Trades';
 
 		const cc = (febGains.textContent += ` + ₱ ${(
 			d * percentages +

@@ -70,7 +70,7 @@ const weeklyPercentageGoal = document.querySelector(
 	'.weekly__percentage__goal'
 );
 const dailyPercentageGoal = document.querySelector('.daily__percentage__goal');
-const averageNumberTrades = document.querySelector('.avg__numb__trade');
+const numberOfTrades = document.querySelector('.numb__trades');
 
 const calculateCapital = () => {
 	form.addEventListener('submit', event => {
@@ -100,8 +100,11 @@ const calculateCapital = () => {
 
 		dailyPercentageGoal.textContent += ' - ' + percentage.value / 20 + '%';
 
-		averageNumberTrades.textContent +=
-			' - ' + percentage.value / 20 / 0.5 + ' Trades';
+		// averageNumberTrades.textContent +=
+		// 	' - ' + percentage.value / 20 / 0.5 + ' Trades';
+
+		numberOfTrades.textContent +=
+			' - ' + Math.ceil(percentage.value / 20 / 0.3) + ' Trades';
 
 		const cc = (febGains.textContent += ` + ₱ ${(
 			d * percentages +
